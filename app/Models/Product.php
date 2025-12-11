@@ -19,6 +19,7 @@ class Product extends Model
         $product->category = $data['category'];
         $product->description = $data['description'];
         $product->price = $data['price'];
+        $product->image = $data['image'] ?? null;
         $product->save();
         return $product;
     }

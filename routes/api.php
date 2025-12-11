@@ -22,7 +22,6 @@ Route::middleware('auth:sanctum')->group(function () {
 // Product Routes 
 Route::middleware('auth:sanctum')->group(function () {
 
-    Route::post('/products/new', [ProductController::class, 'store']);
     Route::put('/products/update/{id}', [ProductController::class, 'store']);
     Route::put('/products/update/{id}', [ProductController::class, 'update']);
     Route::delete('/products/delete/{id}', [ProductController::class, 'destroy']);
@@ -42,6 +41,7 @@ Route::middleware('auth:sanctum')->group(function () {
 //Order admin routes
 Route::middleware(['auth:sanctum', 'is_admin'])->group(function () {
     //All order routes are protected since only administrations can see and manage orders
+    Route::post('/products/new', [ProductController::class, 'store']);
     Route::put('orders/update/{id}', [OrderController::class, 'update']);
     Route::delete('orders/delete/{id}', [OrderController::class, 'destroy']);
     

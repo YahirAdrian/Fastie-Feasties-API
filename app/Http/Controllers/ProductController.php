@@ -41,6 +41,7 @@ class ProductController extends Controller
         $product->category = $data['category'] ?? $product->category;
         $product->description = $data['description'] ?? $product->description;
         $product->price = $data['price'] ?? $product->price;
+        $product->image = $data['image'] ?? $product->image;
         $product->save();
         return $product;
     }
