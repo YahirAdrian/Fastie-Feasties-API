@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('status')->default('pending');
-            $table->text('comments');
+            $table->string('status')->default('Pendiente');
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
+    /**go
      * Reverse the migrations.
      */
     public function down(): void
